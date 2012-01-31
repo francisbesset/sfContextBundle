@@ -66,7 +66,7 @@ class sfContext
     public function get($id)
     {
         if (!$this->has($id)) {
-            throw new Exception(sprintf('The "%s" object does not exist in the current context.', $name));
+            throw new Exception(sprintf('The "%s" service does not exist in the current context.', $name));
         }
 
         return $this->container->get($id);
