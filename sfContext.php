@@ -51,7 +51,7 @@ class sfContext
     }
 
     /**
-     * Monolog\Logger
+     * @return Monolog\Logger
      */
     public function getLogger()
     {
