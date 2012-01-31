@@ -8,8 +8,7 @@ class sfContextBundle extends Bundle
 {
     public function boot()
     {
-        require_once __DIR__.DIRECTORY_SEPARATOR.'sfContext.php';
-
-        $this->container->get('sfContext');
+        include_once __DIR__.'/sfContext.php';
+        \sfContext::createInstance($this->container);
     }
 }

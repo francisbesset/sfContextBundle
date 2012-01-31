@@ -6,16 +6,21 @@ class sfContext
 
     protected $container;
 
-    static public function getInstance()
+    protected function __construct(Symfony\Component\DependencyInjection\Container $container)
     {
+        $this->container = $container;
+    }
+
+    static public function createInstance(Symfony\Component\DependencyInjection\Container $container)
+    {
+        static::$instance = new static($container);
+
         return static::$instance;
     }
 
-    public function __construct(Symfony\Component\DependencyInjection\Container $container)
+    static public function getInstance()
     {
-        self::$instance = $this;
-
-        $this->container = $container;
+        return static::$instance;
     }
 
     public function getContainer()
@@ -61,7 +66,7 @@ class sfContext
     public function get($id)
     {
         if (!$this->has($id)) {
-            throw new sfException(sprintf('The "%s" object does not exist in the current context.', $name));
+            throw new Exception(sprintf('The "%s" object does not exist in the current context.', $name));
         }
 
         return $this->container->get($id);
