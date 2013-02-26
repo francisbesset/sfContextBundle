@@ -4,6 +4,7 @@
     "description": "The symfony's sfContext in Symfony2",
     "keywords": ["symfony", "sfContext", "bundle"],
     "homepage": "https://github.com/francisbesset/sfContextBundle",
+    "license": "MIT",
     "authors": [
         {
             "name": "Francis Besset"
