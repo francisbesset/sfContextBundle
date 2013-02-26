@@ -10,21 +10,29 @@ __This bundle is a joke. Please do not use.__
 
 ## Installation
 
-Add the following lines in your deps file:
+### Step 1) Get the bundle
 
-```
-[sfContextBundle]
-    git=https://github.com/francisbesset/sfContextBundle.git
-    target=bundles/sfContextBundle
-```
+First, grab sfContextBundle. There are two different ways to do this:
 
-Now, run the vendors script to download the bundle:
+#### Method a) Using composer (symfony 2.1 pattern)
+
+Run the following command to add the package to your composer.json
+(see http://getcomposer.org/):
 
 ``` bash
-$ php bin/vendors install
+$ php composer.phar require francisbesset/sfContextBundle:dev-master
 ```
 
-Add the `sfContextBundle` namespace to your autoloader:
+#### Method b) Using the `deps` file (symfony 2.0 pattern)
+
+Add the following lines to your `deps` file and then run `php bin/vendors
+install`:
+
+    [sfContextBundle]
+        git=https://github.com/francisbesset/sfContextBundle.git
+        target=bundles/sfContextBundle
+
+You should then add the `sfContextBundle` namespace to your autoloader:
 
 ``` php
 <?php
@@ -35,6 +43,8 @@ $loader->registerNamespaces(array(
     'sfContextBundle' => __DIR__.'/../vendor/bundles',
 ));
 ```
+
+### Step 2) Register the bundle
 
 Finally, enable the bundle in the kernel:
 
