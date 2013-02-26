@@ -1,5 +1,5 @@
 {
-    "name": "francisbesset/sfContextBundle",
+    "name": "francisbesset/sfcontextbundle",
     "type": "symfony-bundle",
     "description": "The symfony's sfContext in Symfony2",
     "keywords": ["symfony", "sfContext", "bundle"],
