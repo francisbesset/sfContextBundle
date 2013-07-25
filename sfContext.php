@@ -98,11 +98,17 @@ class sfContext
         return $this->container->get($id);
     }
 
+    /**
+     * @return void
+     */
     public function set($id, $object, $scope = Symfony\Component\DependencyInjection\Container::SCOPE_CONTAINER)
     {
-        $this->container->set($id, $service, $scope);
+        $this->container->set($id, $object, $scope);
     }
 
+    /**
+     * @return Boolean
+     */
     public function has($id)
     {
         return $this->container->has($id);
